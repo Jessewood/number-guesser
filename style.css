@@ -1,0 +1,163 @@
+/* style.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header {
+    background: #404041;
+    height: 100px;
+    margin: 0 auto;
+}
+.heading {
+    color: #ED458B;
+    font-size: 50px;
+    font-family: 'Open Sans', Sans-serif;
+    font-weight: 700;
+    text-align: center;
+    vertical-align: center;
+    width: 500px;
+    padding-top: 10px;
+    margin: 0 auto;
+}
+.second-heading {
+    color: #E6E7E8;
+    font-weight: 300;
+    font-size: 50px;
+}
+#input-guess {
+    display: block;
+    width: 380px;
+    height: 40px;
+    margin: 30px auto 0 auto;
+    vertical-align: center;
+    font-size: 20px;
+    font-family: 'Open Sans', Sans-serif;
+    outline-color: #EB008B;
+    padding-left: 5px;
+}
+
+#input-guess::placeholder {
+    padding-left: 5px;
+}
+.top-buttons {
+    display: inline-block;
+    margin: 30px auto;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+#guess {
+    margin-left: 0 auto;
+    background-color: #929497;
+    color: #FFFFFF;
+    width: 175px;
+    border-radius: 20px;
+    padding: 5px;
+    font-size: 16px;
+    font-family: 'Open Sans', Sans-serif;
+    border: none;
+    outline: none;
+}
+
+#guess:disabled {
+    background-color: #D0D2D3
+}
+
+#guess:hover:enabled {
+    background-color: #EB008B;
+    }
+
+.clear {
+    display: inline-block;
+    margin-left: 20px;
+    color: #FFFFFF;
+    background-color: #929497;
+    width: 175px;
+    border-radius: 20px;
+    font-size: 16px;
+    padding: 5px;
+    font-family: 'Open Sans', Sans-serif;
+    border: none;
+    outline: none;
+ }
+
+.clear:disabled {
+    background-color: #D0D2D3
+}
+
+.clear:hover:enabled {
+    background-color: #EB008B;
+    } 
+
+.number-space {
+    width: 250px;
+    height: 180px;
+    /*border: red solid 1px;*/
+    display: block;
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+}
+
+.last-guess {
+    text-align: center;
+    font-family: 'Open Sans', Sans-serif;
+    color: #404041;
+    font-size: 20px;
+    height: 27px;
+
+    /*margin-top: 20px;*/
+}
+.winner {
+    font-weight: bold;
+    color: #EB008B;
+}
+
+.result {
+    width: 250px;
+    height: 200px;
+    font-size: 135px;
+    text-align:center;
+    margin: 0 auto;
+    font-family: 'Open Sans', Sans-serif;
+    /*font-weight: 700;*/
+    color: #ED458B ;
+}
+.reset-button {
+    display: block;
+    size: 20;
+    width: 370px;
+    margin: 50px  auto 0 auto;
+    background-color: #929497;
+    color: #FFFFFF;
+    border-radius: 20px;
+    padding: 5px;
+    font-family: 'Open Sans', Sans-serif;
+    font-size: 14px;
+    border: none;
+    outline: none;
+}
+.low-or-high {
+    text-align: center;
+    font-family: 'Open Sans', Sans-serif;
+    color: #404041;
+    font-size: 20px;
+    height: 27px;
+}
+.reset-button:disabled {
+    background-color: #D0D2D3
+}
+
+.reset-button:hover:enabled {
+    background-color: #EB008B;
+    }
+
+.errorText {
+    color: #e2161d;
+    font-weight: bold;
+}
+
+.errorNumber {
+    font-weight: bold;
+}
