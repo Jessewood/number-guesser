@@ -1,4 +1,6 @@
-var randomNum = Math.floor(Math.random() * 100)+1;
+var globalMin = 1;
+var globalMax = 100;
+var randomNum = getRandomInt(globalMin, globalMax)
 var guessBtn = document.getElementById('guess');
 var guessInput = document.getElementById('input-guess');
 var clearBtn = document.querySelector('.clear');
@@ -6,6 +8,9 @@ var match = document.querySelector('.low-or-high');
 var numberResult = document.querySelector('.result');
 var instruction = document.querySelector('.last-guess');
 var resetButton = document.querySelector('.reset-button');
+var minValueUser = document.querySelector('.min-value')
+var maxValueUser = document.querySelector('.max-value');
+var userSet = document.querySelector('.user-button');
 
 
 console.log(randomNum)
@@ -14,6 +19,19 @@ guessBtn.addEventListener('click', compare);
 guessInput.addEventListener('keyup', enableButton);
 clearBtn.addEventListener('click', clearInput);
 resetButton.addEventListener('click', resetGame);
+userSet.addEventListener("click", grabMinAndMax)
+
+
+function grabMinAndMax(){
+    globalMin = parseInt(minValueUser.value);
+    globalMax = parseInt(maxValueUser.value);
+    randomNum = getRandomInt(globalMin, globalMax)
+    console.log(randomNum)
+}
+
+
+
+
 
 
  function enableButton(){
@@ -28,7 +46,6 @@ resetButton.addEventListener('click', resetGame);
 
 
 function compare() {
-
     var numberGuessed = parseInt(guessInput.value);
     console.log(numberGuessed);
     numberResult.innerText = numberGuessed;
@@ -37,7 +54,7 @@ function compare() {
     guessInput.value = "";
     enableButton()
     guessInput.focus();
-    if (numberGuessed > 100 || numberGuessed < 1){
+    if (numberGuessed > globalMax || numberGuessed < globalMin){
         match.innerHTML='<span class="errorText">Error</span>: Number must be between <span class="errorNumber">0 - 100</span>';
         return;
     }
@@ -58,11 +75,10 @@ function clearInput(){
 }
 
 
-// function getRandomInt(min, max) {
-//     return Math.floor(Math.random() * (max - min + 1)) + min;
-//     console.log(getRandomInt)
-// }
-
+function getRandomInt(min, max) {
+    // console.log(getRandomInt())
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 function resetGame(){
     window.location.reload()
