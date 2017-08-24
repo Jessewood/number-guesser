@@ -1,8 +1,8 @@
 var globalMin = 1;
 var globalMax = 100;
 var randomNum = getRandomInt(globalMin, globalMax)
-var guessBtn = document.getElementById('guess');
-var guessInput = document.getElementById('input-guess');
+var guessBtn = document.querySelector('.guess');
+var guessInput = document.querySelector('.input-guess');
 var clearBtn = document.querySelector('.clear');
 var match = document.querySelector('.low-or-high');
 var numberResult = document.querySelector('.result');
@@ -20,7 +20,13 @@ guessInput.addEventListener('keyup', enableButton);
 clearBtn.addEventListener('click', clearInput);
 resetButton.addEventListener('click', resetGame);
 userSet.addEventListener("click", grabMinAndMax)
+maxValueUser.addEventListener('input', enableSetButton)
 
+function enableSetButton(){
+    if (maxValueUser.value !== ""){
+        userSet.removeAttribute("disabled")
+    }
+}
 
 function grabMinAndMax(){
     globalMin = parseInt(minValueUser.value);
@@ -28,11 +34,6 @@ function grabMinAndMax(){
     randomNum = getRandomInt(globalMin, globalMax)
     console.log(randomNum)
 }
-
-
-
-
-
 
  function enableButton(){
     if (guessInput.value !== ""){
@@ -55,7 +56,7 @@ function compare() {
     enableButton()
     guessInput.focus();
     if (numberGuessed > globalMax || numberGuessed < globalMin){
-        match.innerHTML='<span class="errorText">Error</span>: Number must be between <span class="errorNumber">0 - 100</span>';
+        match.innerHTML='<span class="errorText">Error</span>: Number must be between <span class="errorNumber">' + minValueUser.value + '-' + maxValueUser.value + '</span>';
         return;
     }
     if(numberGuessed === randomNum) {
