@@ -47,10 +47,6 @@ header {
     padding-left: 2px;
 }
 
-.min-value::placeholder {
-    padding-left: 2px;
-}
-
 .max-value {
     display: inline-block;
     font-family: 'Open Sans', Sans-serif;
@@ -58,10 +54,6 @@ header {
     height: 30px;
     font-size: 16px;
     margin-left: 20px;
-    padding-left: 2px;
-}
-
-.max-value::placeholder {
     padding-left: 2px;
 }
 
@@ -74,6 +66,7 @@ header {
     border: none;
     margin-left: 5px;
     background-color: #929497;
+    outline: none;
 }
 .user-button:disabled {
     background-color: #D0D2D3
@@ -165,6 +158,8 @@ header {
 .winner {
     font-weight: bold;
     color: #EB008B;
+    text-align: center;
+    padding-bottom: 5px;
 }
 
 .result {
@@ -198,6 +193,7 @@ header {
     font-size: 20px;
     height: 27px;
 }
+
 .reset-button:disabled {
     background-color: #D0D2D3
 }

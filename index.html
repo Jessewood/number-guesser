@@ -12,8 +12,8 @@
     </header>
     <fieldset class="user-values">
         <p class="user-range">Guess a number between 1 - 100 or set your range!</p>
-        <input class="min-value" placeholder="1"></input>
-        <input class="max-value" placeholder="100"></input>
+        <input type="number" class="min-value" value= 1></input>
+        <input type="number" class="max-value" value= 100></input>
         <button class="user-button" disabled>Set</button>
     </fieldset>
 
@@ -23,14 +23,17 @@
         <button class="clear" disabled>Clear</button>    
     </section>
     <section>
-        <p class="last-guess"></p>
+        <p class="last-guess">We'll tell you if your guess</p>
     </section>
     <section class="number-space">
         <p class="result">#
         </p>
     </section>
-    <p class="low-or-high"> 
+    <p class="low-or-high">is too low or too high
     </p>
+   <!--  <section>
+        <button class="harder"> Next Level </button>
+        </section> -->
     <section>
         <button class="reset-button" disabled="true">Reset</button>
         <br>

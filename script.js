@@ -21,19 +21,29 @@ clearBtn.addEventListener('click', clearInput);
 resetButton.addEventListener('click', resetGame);
 userSet.addEventListener("click", grabMinAndMax)
 maxValueUser.addEventListener('input', enableSetButton)
+minValueUser.addEventListener('input', enableSetButton)
+
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 function enableSetButton(){
-    if (maxValueUser.value !== ""){
+    if (minValueUser.value !== "" && maxValueUser.value !== ""){
         userSet.removeAttribute("disabled")
+    } else {
+        userSet.setAttribute("disabled", true)
     }
 }
+
+
 
 function grabMinAndMax(){
     globalMin = parseInt(minValueUser.value);
     globalMax = parseInt(maxValueUser.value);
-    randomNum = getRandomInt(globalMin, globalMax)
-    console.log(randomNum)
+    randomNum = getRandomInt(globalMin, globalMax);
+    console.log(randomNum);
 }
+
 
  function enableButton(){
     if (guessInput.value !== ""){
@@ -56,29 +66,35 @@ function compare() {
     enableButton()
     guessInput.focus();
     if (numberGuessed > globalMax || numberGuessed < globalMin){
-        match.innerHTML='<span class="errorText">Error</span>: Number must be between <span class="errorNumber">' + minValueUser.value + '-' + maxValueUser.value + '</span>';
+        match.innerHTML='<span class="errorText">Error</span>: Number must be between <span class="errorNumber">' + minValueUser.value + ' - ' + maxValueUser.value + '</span>';
         return;
-    }
-    if(numberGuessed === randomNum) {
-        match.innerHTML='<span class="winner">BOOM!</span>';
-
     } else if 
         (numberGuessed < randomNum) {
             match.innerText='That is too low';
-        } else if 
+    } else if 
         (numberGuessed > randomNum) {
             match.innerText='That is too high';
+    } else if(numberGuessed === randomNum) {
+        match.innerHTML='<span class="winner">Winner!</span><p> Every time you win the range increases by 10 and -10' 
+        increaseRange()
         } 
+
+
+
 }
+
+function increaseRange(){
+    maxValueUser.value = (globalMax) + 10;
+    minValueUser.value = (globalMin) - 10;
+    globalMin = parseInt(minValueUser.value);
+    globalMax = parseInt(maxValueUser.value); 
+    randomNum = getRandomInt(globalMin, globalMax)
+    console.log(randomNum)
+}
+
 
 function clearInput(){
     guessInput.value = "";
-}
-
-
-function getRandomInt(min, max) {
-    // console.log(getRandomInt())
-    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function resetGame(){
