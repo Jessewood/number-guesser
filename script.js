@@ -77,16 +77,16 @@ function compare() {
 }
 
 function increaseRange(){
-    maxValueUser.value = (globalMax) + 10;
-    minValueUser.value = (globalMin) - 10;
-    globalMin = parseInt(minValueUser.value);
-    globalMax = parseInt(maxValueUser.value); 
+    globalMax = globalMax + 10;
+    globalMin = globalMin - 10;
+    maxValueUser.value = (globalMax);
+    minValueUser.value = (globalMin);
     randomNum = getRandomInt(globalMin, globalMax)
     console.log(randomNum)
 }
 
 function clearInput(){
-    guessInput.value = "";
+    guessInput.value = ""; 
 }
 
 function resetGame(){
