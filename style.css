@@ -32,8 +32,8 @@ header {
 }
 
 .user-values {
-    margin-top: 20px;
     border: none;
+    margin-top: 20px;
     text-align: center;
 }
 
@@ -159,7 +159,7 @@ header {
     font-weight: bold;
     color: #EB008B;
     text-align: center;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
 }
 
 .result {
@@ -203,6 +203,7 @@ header {
     }
 
 .errorText {
+    margin-top: 10px;
     color: #e2161d;
     font-weight: bold;
 }

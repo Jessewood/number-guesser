@@ -8,32 +8,27 @@
 <body>
     <header>
         <p class="heading"> Number <span class="second-heading">Guesser</span></p>
-
     </header>
     <fieldset class="user-values">
-        <p class="user-range">Guess a number between 1 - 100 or set your range!</p>
+        <p class="user-range">Guess a number between 1 - 100 or set your own range!</p>
         <input type="number" class="min-value" value= 1></input>
         <input type="number" class="max-value" value= 100></input>
         <button class="user-button" disabled>Set</button>
     </fieldset>
-
-    <input type="number" name="number-guess" class="input-guess" min="1" max="100" placeholder="Enter your guess"/>
+        <input type="number" name="number-guess"class="input-guess" min="1" max="100" placeholder="Enter your guess"/>
     <section class="top-buttons">
         <button class="guess" disabled>Guess</button>
         <button class="clear" disabled>Clear</button>    
     </section>
     <section>
-        <p class="last-guess">We'll tell you if your guess</p>
+        <p class="last-guess"></p>
     </section>
     <section class="number-space">
         <p class="result">#
         </p>
     </section>
-    <p class="low-or-high">is too low or too high
+    <p class="low-or-high">
     </p>
-   <!--  <section>
-        <button class="harder"> Next Level </button>
-        </section> -->
     <section>
         <button class="reset-button" disabled="true">Reset</button>
         <br>
