@@ -35,15 +35,12 @@ function enableSetButton(){
     }
 }
 
-
-
 function grabMinAndMax(){
     globalMin = parseInt(minValueUser.value);
     globalMax = parseInt(maxValueUser.value);
     randomNum = getRandomInt(globalMin, globalMax);
     console.log(randomNum);
 }
-
 
  function enableButton(){
     if (guessInput.value !== ""){
@@ -54,7 +51,6 @@ function grabMinAndMax(){
         clearBtn.setAttribute("disabled", true)
     }
 }
-
 
 function compare() {
     var numberGuessed = parseInt(guessInput.value);
@@ -78,9 +74,6 @@ function compare() {
         match.innerHTML='<span class="winner">Winner!</span><p> Every time you win the range increases by 10 and -10' 
         increaseRange()
         } 
-
-
-
 }
 
 function increaseRange(){
@@ -91,7 +84,6 @@ function increaseRange(){
     randomNum = getRandomInt(globalMin, globalMax)
     console.log(randomNum)
 }
-
 
 function clearInput(){
     guessInput.value = "";
