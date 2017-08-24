@@ -25,11 +25,65 @@ header {
     font-weight: 300;
     font-size: 50px;
 }
-#input-guess {
+
+.user-range {
+    font-family: 'Open Sans', Sans-serif;
+    padding-bottom: 15px;
+}
+
+.user-values {
+    margin-top: 20px;
+    border: none;
+    text-align: center;
+}
+
+.min-value {
+    display: inline-block;
+    font-family: 'Open Sans', Sans-serif;
+    width: 90px;
+    height: 30px;
+    font-size: 16px;
+    margin-left: 40px;
+    padding-left: 2px;
+}
+
+.min-value::placeholder {
+    padding-left: 2px;
+}
+
+.max-value {
+    display: inline-block;
+    font-family: 'Open Sans', Sans-serif;
+    width: 90px;
+    height: 30px;
+    font-size: 16px;
+    margin-left: 20px;
+    padding-left: 2px;
+}
+
+.max-value::placeholder {
+    padding-left: 2px;
+}
+
+.user-button {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    vertical-align: center;
+    color: #FFFFFF;
+    border: none;
+    margin-left: 5px;
+    background-color: #929497;
+}
+.user-button:disabled {
+    background-color: #D0D2D3
+}
+
+.input-guess {
     display: block;
     width: 380px;
     height: 40px;
-    margin: 30px auto 0 auto;
+    margin: 20px auto 0 auto;
     vertical-align: center;
     font-size: 20px;
     font-family: 'Open Sans', Sans-serif;
@@ -37,7 +91,7 @@ header {
     padding-left: 5px;
 }
 
-#input-guess::placeholder {
+.input-guess::placeholder {
     padding-left: 5px;
 }
 .top-buttons {
@@ -47,7 +101,7 @@ header {
     text-align: center;
     position: relative;
 }
-#guess {
+.guess {
     margin-left: 0 auto;
     background-color: #929497;
     color: #FFFFFF;
@@ -60,11 +114,11 @@ header {
     outline: none;
 }
 
-#guess:disabled {
+.guess:disabled {
     background-color: #D0D2D3
 }
 
-#guess:hover:enabled {
+.guess:hover:enabled {
     background-color: #EB008B;
     }
 
@@ -107,7 +161,6 @@ header {
     font-size: 20px;
     height: 27px;
 
-    /*margin-top: 20px;*/
 }
 .winner {
     font-weight: bold;
